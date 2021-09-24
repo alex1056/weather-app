@@ -26,11 +26,11 @@ const ShowWeather = (props) => {
     navigator.geolocation.getCurrentPosition(
       (pos) => {
         const crd = pos.coords;
-        startPointLat = Math.floor(crd.latitude * 10000) / 10000;
-        startPointLon = Math.floor(crd.longitude * 10000) / 10000;
+        startPointLat = Math.floor(crd.latitude * 100000) / 100000;
+        startPointLon = Math.floor(crd.longitude * 100000) / 100000;
         loadByCoords({
-          lat: Math.floor(startPointLat * 10000) / 10000,
-          lon: Math.floor(startPointLon * 10000) / 10000,
+          lat: Math.floor(startPointLat * 100000) / 100000,
+          lon: Math.floor(startPointLon * 100000) / 100000,
         });
         setLatInputValue(startPointLat);
         setLongInputValue(startPointLon);
@@ -63,8 +63,8 @@ const ShowWeather = (props) => {
     e.preventDefault();
     if (latInputValue && lonInputValue) {
       loadByCoords({
-        lat: Math.floor(latInputValue * 10000) / 10000,
-        lon: Math.floor(lonInputValue * 10000) / 10000,
+        lat: Math.floor(latInputValue * 100000) / 100000,
+        lon: Math.floor(lonInputValue * 100000) / 100000,
       });
     }
   };
